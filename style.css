@@ -1,0 +1,323 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #0d2538;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo img {
+  height: 50px;
+  width: auto;
+  display: block;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* Hero with animated gradient */
+.hero {
+  text-align: center;
+  padding: 5rem 2rem;
+  background: linear-gradient(-45deg, #0d2538, #1d3e5f, #00c4cc, #007a85);
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.hero span {
+  color: #00ffe0;
+}
+
+.hero p {
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  background: #00c4cc;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #009ca1;
+}
+
+/* Services */
+.services {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.services h2 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #0d2538;
+}
+
+.service-cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #f4f4f4;
+  padding: 1.5rem;
+  border-radius: 10px;
+  width: 280px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.card h3 {
+  margin-bottom: 1rem;
+  color: #0d2538;
+}
+
+/* About */
+/* About Section */
+.about {
+  padding: 4rem 2rem;
+  background: #eef2f7;
+  text-align: left;       /* ✅ left align content */
+  max-width: 1000px;      /* ✅ keep text from stretching too wide */
+  margin: 0 auto;         /* ✅ center the block within the page */
+}
+
+.about h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: #0d2538;
+  text-align: center;     /* ✅ heading still centered */
+}
+
+.about p {
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.7;
+}
+
+
+/* Contact */
+.contact {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.contact h2 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #0d2538;
+}
+
+.contact-form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  padding: 0.8rem;
+  background: #0d2538;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #1d3e5f;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background: #0d2538;
+  color: white;
+  font-size: 0.9rem;
+}
+
+
+
+
+/* --- Tidy, aligned lists for Services / Products / Why Choose Us --- */
+.service-list {
+  list-style: none;            /* remove default bullets */
+  padding: 0;                  /* remove default padding */
+  margin: 0 auto;              /* center the list block as a whole */
+  max-width: 1000px;           /* constrain width for readable lines */
+  text-align: left;            /* left-align the list items */
+  display: grid;               /* easy multi-column layout on wide screens */
+  grid-template-columns: 1fr;  /* single column by default */
+  gap: 0.6rem 2rem;            /* row & column gap */
+}
+
+.service-list li {
+  position: relative;
+  padding-left: 1.6rem;        /* space for custom bullet */
+  color: #444;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* custom colored round bullet */
+.service-list li::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  background: #00c4cc;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 0.8rem; /* adjust to vertically center bullet on the line */
+}
+
+/* two columns on wider screens */
+@media (min-width: 900px) {
+  .service-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* optional: make titles in list a bit darker/strong */
+.service-list li strong {
+  color: #0d2538;
+  font-weight: 600;
+}
+
+
+
+/* Products Section */
+.products {
+  padding: 4rem 2rem;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.products h2 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #0d2538;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* mobile: single column */
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.product-card img {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  margin: 1rem auto;
+  border-radius: 8px;
+}
+
+.product-card h3 {
+  margin-top: 0;
+  font-size: 1.3rem;
+  color: #0d2538;
+}
+
+.product-card p {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 0.5rem;
+  line-height: 1.5;
+}
+
+/* Two cards in a row on bigger screens */
+@media (min-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
